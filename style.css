@@ -11,7 +11,6 @@
     background-color: azure;
 }
 
-/* Improve chat-container to display sidebar and chat-area side by side */
 .chat-container {
     width: 100%;
     height: 100%;
@@ -19,7 +18,6 @@
     flex-direction: row;
 }
 
-/* Enhanced sidebar styling */
 .sidebar{
     width: 280px;
     min-width: 280px;
@@ -142,7 +140,6 @@ img:hover{
     align-items: center;
 }
 
-/* Add social media icons styling if needed */
 .contact-icons {
     display: flex;
     justify-content: center;
@@ -297,7 +294,7 @@ img:hover{
     border-radius: 15px 15px 15px 0;
     padding: 8px 15px;
     margin-bottom: 10px;
-    max-width: 7%;
+    max-width: 20%;  
     align-self: flex-start;
     display: none;
 }
@@ -337,5 +334,133 @@ img:hover{
     100% {
         transform: translateY(0px);
         opacity: 0.4;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+        min-width: 240px;
+    }
+    
+    .avatar {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .name h3 {
+        font-size: 18px;
+    }
+    
+    .name h4 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        max-height: 250px;
+        overflow-y: auto;
+        padding: 10px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .back-button {
+        width: 95%;
+    }
+    
+    .profile {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 10px;
+    }
+    
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+    }
+    
+    .name {
+        width: auto;
+        margin: 10px;
+        text-align: left;
+    }
+    
+    .general {
+        margin: 5px;
+    }
+    
+    .career, .contact {
+        display: none; 
+    }
+    
+    .chat-area {
+        height: calc(100% - 250px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        max-height: 200px;
+    }
+    
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .name h3 {
+        font-size: 16px;
+    }
+    
+    .name h4 {
+        font-size: 12px;
+    }
+    
+    .chat-header {
+        height: 40px;
+    }
+    
+    .chat-input {
+        height: 45px;
+    }
+    
+    #user-input {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    #send-button {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+    
+    .bot-message, .user-message {
+        max-width: 90%;
+        padding: 6px 10px;
+    }
+    
+    .welcome-message h3 {
+        font-size: 12px;
+    }
+    
+    .welcome-message p, .bot-message p {
+        font-size: 12px;
+    }
+    
+    .typing-indicator {
+        max-width: 20%;
+        padding: 5px 10px;
     }
 }
